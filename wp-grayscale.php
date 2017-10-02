@@ -14,7 +14,7 @@
 
 
 
-add_action( 'wp_enqueue_scripts', 'wp_easy_grayscale_styles' );
+add_action( 'wp_enqueue_scripts', 'wp_grayscale_styles' );
 
 function load_jquery() {
     if ( ! wp_script_is( 'jquery', 'enqueued' )) {
@@ -64,9 +64,9 @@ function add_remove_grayscale() {
     ';
 }
 
-function wp_easy_grayscale_styles() {
+function wp_grayscale_styles() {
 	if(!is_admin()) {
-		$option = get_option( 'wp_easy_grayscale_option' );
+		$option = get_option( 'wp_grayscale_option' );
 
 		if(($option) and ($option!==null) and !empty($option)):
 			$percent = $option['percent_number'];
@@ -143,10 +143,10 @@ class WP_Grayscale_Page
     public function create_admin_page()
     {
         // Set class property
-        $this->options = get_option( 'wp_easy_grayscale_option' );
+        $this->options = get_option( 'wp_grayscale_option' );
         ?>
         <div class="wrap">
-            <h1>WordPress Easy Grayscale</h1>
+            <h1>WordPress Grayscale</h1>
             <form method="post" action="options.php">
             <?php
                 // This prints out all hidden setting fields
@@ -166,7 +166,7 @@ class WP_Grayscale_Page
     {
         register_setting(
             'my_option_group', // Option group
-            'wp_easy_grayscale_option', // Option name
+            'wp_grayscale_option', // Option name
             array( $this, 'sanitize' ) // Sanitize
         );
 
@@ -219,7 +219,7 @@ class WP_Grayscale_Page
     public function percent_number_callback()
     {
         printf(
-            '<input type="text" id="percent_number" name="wp_easy_grayscale_option[percent_number]" value="%s" />',
+            '<input type="text" id="percent_number" name="wp_grayscale_option[percent_number]" value="%s" />',
             isset( $this->options['percent_number'] ) ? esc_attr( $this->options['percent_number']) : '40'
         );
     }
@@ -227,7 +227,7 @@ class WP_Grayscale_Page
     public function wp_ribbon_callback()
     {
         printf(
-            '<input type="checkbox" id="wp_ribbon" name="wp_easy_grayscale_option[wp_ribbon]" %s />',
+            '<input type="checkbox" id="wp_ribbon" name="wp_grayscale_option[wp_ribbon]" %s />',
             isset( $this->options['wp_ribbon'] ) ? 'checked' : ''
         );
     }
