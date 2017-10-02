@@ -34,7 +34,7 @@ function add_remove_grayscale() {
 
     $local_key = str_replace(".", "_", $_SERVER["SERVER_NAME"]);
 
-    echo "<div class=\"remove-filter\"><a href=\"#\" class=\"btn-remove-filter\">ปิดโหมดสีเทา</a></div>";
+    echo "<div class=\"remove-filter\"><a href=\"#\" class=\"btn-remove-filter\">ปิดโหมดสีดำ</a></div>";
     echo '
 
     <script>
@@ -220,7 +220,7 @@ class WP_Grayscale_Page
     {
         printf(
             '<input type="text" id="percent_number" name="wp_grayscale_option[percent_number]" value="%s" />',
-            isset( $this->options['percent_number'] ) ? esc_attr( $this->options['percent_number']) : '40'
+            isset( $this->options['percent_number'] ) ? esc_attr( $this->options['percent_number']) : '100'
         );
     }
 
