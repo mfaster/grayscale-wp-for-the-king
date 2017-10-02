@@ -1,1 +1,1 @@
-# greyscale-wp-for-the-king
+# wordpress grayscale
