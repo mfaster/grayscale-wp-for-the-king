@@ -72,7 +72,7 @@ function wp_grayscale_styles() {
 			$percent = $option['percent_number'];
 			$percent_divide = $percent / 100;
 		else:
-			$percent = 40;
+			$percent = 100;
 			$percent_divide = 4;
         endif;
         
