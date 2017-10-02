@@ -130,7 +130,7 @@ class WP_Grayscale_Page
         // This page will be under "Settings"
         add_options_page(
             'Settings Admin', 
-            'WP Easy Grayscale', 
+            'WP Grayscale', 
             'manage_options', 
             'wp-grayscale', 
             array( $this, 'create_admin_page' )
